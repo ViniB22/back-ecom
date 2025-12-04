@@ -1,4 +1,5 @@
 const ItemPedido = require('../models/ItemPedido')
+const Produto = require('../models/Produto')
 
 async function criarItemPedido(dados) {
 
@@ -26,7 +27,10 @@ async function listarItensPedido() {
 }
 
 async function listarItensPedidoPorPedido(idPedido) {
-    const itensPedido = await ItemPedido.findAll({ where: { idPedido } })
+    const itensPedido = await ItemPedido.findAll({
+        where: { idPedido },
+        include: [{ model: Produto, as: 'produtoItem' }]
+    })
     return itensPedido
 }
 

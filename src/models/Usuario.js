@@ -13,8 +13,7 @@ const Usuario = db.define('usuario',{
     },
     email: {
         type: DataTypes.STRING(100),
-        allowNull: false,
-        unique: true
+        allowNull: false
     },
     senha: { 
         type: DataTypes.STRING(255), 

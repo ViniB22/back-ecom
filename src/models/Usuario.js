@@ -23,10 +23,9 @@ const Usuario = db.define('usuario',{
         type: DataTypes.STRING(20),
         allowNull: false
     },
-    cpf: { 
-        type: DataTypes.STRING(14), 
-        allowNull: false,
-        unique: true
+    cpf: {
+        type: DataTypes.STRING(14),
+        allowNull: false
     },
     identidade: {
         type: DataTypes.STRING(20),

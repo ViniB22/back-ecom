@@ -6,7 +6,7 @@ const app = express()
 // ------------------ Middlewares globais ------------------
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-app.use(cors({ origin: true }))
+app.use(cors())
 
 // ------------------ Rotas ------------------
 const usuarioRoutes = require('../routes/usuario.routes')

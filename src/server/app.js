@@ -7,7 +7,6 @@ const app = express()
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cors())
-app.options('/*', cors()) // handle preflight requests
 
 // ------------------ Rotas ------------------
 const usuarioRoutes = require('../routes/usuario.routes')

@@ -2,9 +2,13 @@ const { verificarToken } = require('../utils/tokenJWT')
 
 function authMiddleware(req, res, next) {
 
-// console.log('[AUTH MIDDLEWARE] - Iniciando verificação de token...')
+    if (req.method === 'OPTIONS') {
+        return next();
+    }
 
-const authHeader = req.headers['authorization']
+ // console.log('[AUTH MIDDLEWARE] - Iniciando verificação de token...')
+
+ const authHeader = req.headers['authorization']
 
 if (!authHeader) {
     console.log('[AUTH MIDDLEWARE] - Nenhum header Authorization encontrado!')
